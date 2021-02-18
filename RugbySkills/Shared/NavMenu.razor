@@ -1,0 +1,82 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Rugby Skills</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="tackling">
+                <span class="oi oi-target" aria-hidden="true"></span> Tackling
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="rucking">
+                <span class="oi oi-arrow-circle-top" aria-hidden="true"></span> Rucking
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="defence">
+                <span class="oi oi-shield" aria-hidden="true"></span> Defence
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="attack">
+                <span class="oi oi-caret-top" aria-hidden="true"></span> Attack
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="kicking">
+                <span class="oi oi-action-redo" aria-hidden="true"></span> Kicking
+            </NavLink>
+        </li>
+        @*<li class="nav-item px-3">
+            <NavLink class="nav-link" href="scrum">
+                <span class="oi oi-resize-width" aria-hidden="true"></span> Scrum
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lineout">
+                <span class="oi oi-resize-height" aria-hidden="true"></span> Lineout
+            </NavLink>
+        </li>*@
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="fitness">
+                <span class="oi oi-heart" aria-hidden="true"></span> Fitness
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="nutrition">
+                <span class="oi oi-fire" aria-hidden="true"></span> Nutrition
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="discipline">
+                <span class="oi oi-badge" aria-hidden="true"></span> Discipline
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="following">
+                <span class="oi oi-monitor" aria-hidden="true"></span> Following
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
